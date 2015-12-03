@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 {
 	cl::ParseCommandLineOptions(argc, argv, "LLVM hello world\n");
 	LLVMContext context;
-	std::string error;
 	ErrorOr<std::unique_ptr<MemoryBuffer>> mb = MemoryBuffer::getFile(FileName);
 	if (std::error_code ec = mb.getError()) {
 		errs() << ec.message();
